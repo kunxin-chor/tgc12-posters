@@ -16,8 +16,11 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('posters', {
-    'title': {
+    'id': {
       'type':'int', 'primaryKey': true, 'autoIncrement': true, 'unsigned': true
+    },
+    'title':{
+      'type':'string', 'notNull':true
     },
     'cost': {
       'type': 'int', 'unsigned': true, 'notNull': true

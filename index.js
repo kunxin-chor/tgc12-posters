@@ -2,6 +2,7 @@ const express = require("express");
 const hbs = require("hbs");
 const wax = require("wax-on");
 require("dotenv").config();
+const bookshelf = require('./bookshelf')
 
 // create an instance of express app
 let app = express();
@@ -31,6 +32,8 @@ async function main() {
 
     // alternatively:
     // app.use('/', require('./routes/landing'));
+
+    app.use('/posters/', require('./routes/posters'))
 }
 
 main();
